@@ -9,7 +9,7 @@ services:
     volumes:
       - .:/var/www/html
     networks:
-      - adel-network
+      - mynetwork
   app:
     build:
       context: .
@@ -19,5 +19,4 @@ services:
     volumes:
       - .:/var/www/html
   networks:
-    adel-network:
-      [driver: adel]
+    mynetwork:
