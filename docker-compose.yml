@@ -18,7 +18,6 @@ services:
       - 8000:8000
     volumes:
       - .:/var/www/html
-  # web:
-  #   image: adelfenin
-  #   ports:
-  #     - 80:80
+  networks:
+    app-network:
+      external: true
