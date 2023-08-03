@@ -9,7 +9,7 @@ services:
     volumes:
       - .:/var/www/html
     networks:
-      - mynetwork
+      - app-network
   app:
     build:
       context: .
@@ -19,4 +19,5 @@ services:
     volumes:
       - .:/var/www/html
   networks:
-    mynetwork:
+    app-network:
+      driver: bridge
