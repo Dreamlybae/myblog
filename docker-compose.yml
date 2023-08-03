@@ -1,29 +1,29 @@
 version: '3'
 services:
-  web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8000"
-    volumes:
-      - .:/var/www/html
-    networks:
-      - my-network
-  # app:
+  # web:
   #   build:
   #     context: .
   #     dockerfile: Dockerfile
   #   ports:
-  #     - 8000:8000
+  #     - "8080:8000"
   #   volumes:
   #     - .:/var/www/html
-  my-service:
-    # dockerfile: Dockerfile
-    image: adelfenin
-    networks:
-      - my-network
+  #   networks:
+  #     - my-network
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/var/www/html
+  # my-service:
+  #   # dockerfile: Dockerfile
+  #   image: adelfenin
+  #   networks:
+  #     - my-network
 
-networks:
-  my-network:
-    driver: bridge
+# networks:
+#   my-network:
+#     driver: bridge
